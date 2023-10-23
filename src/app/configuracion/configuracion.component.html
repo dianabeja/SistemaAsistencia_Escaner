@@ -1,0 +1,113 @@
+<section class="ordenar ">
+  <div style="padding-bottom: 20px; margin-left: 0;">
+    <div class="d-grid gap-2 d-md-block">
+      <button
+        type="button"
+        class="boton btn btn-primary"
+        (click)="Lista_Asistencia = !Lista_Asistencia"
+      >
+        Mostrar Lista
+      </button>
+      <button
+        type="button"
+        class="boton btn btn-primary"
+        (click)="Materias_Cargadas = !Materias_Cargadas"
+      >
+        Mostrar Materias
+      </button>
+      <button  type="submit" class="boton btn btn-primary" (click)="onSubmit()">
+        Guardar configuración
+      </button>
+    </div>
+  </div>
+  
+    <section class="opciones">
+      <div class="mb-3">
+        <label class="form-label">Edificio asignado </label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          [(ngModel)]="edificioSeleccionado"
+        >
+          <option selected>Selecciona un edificio</option>
+          <option value="edificio1">Edificio 1</option>
+          <option value="edificio2">Edificio 2</option>
+          <option value="edificio3">Edificio 3</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Salón asignado </label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          [(ngModel)]="salonSeleccionado"
+        >
+          <option selected>Selecciona un salón</option>
+          <option value="salon 11">Salón 11</option>
+          <option value="Salón 2">Salón 2</option>
+          <option value="Salón 3">Salón 3</option>
+          <option value="Salón 4">Salón 4</option>
+          <option value="Salón 5">Salón 5</option>
+          <option value="Salón 6">Salón 6</option>
+          <option value="Salón 7">Salón 7</option>
+          <option value="Salón 8">Salón 8</option>
+          <option value="Salón 9">Salón 9</option>
+        </select>
+      </div>
+    </section>
+</section>
+
+  <div class="Contenedor">
+    <table *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px">
+      <thead>
+        <h2>Lista de Asistencia</h2>
+        <tr>
+          <th>Indice</th>
+          <th>Alumno</th>
+          <th>Matricula</th>
+          <th>Carrera</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let alumno_recibido of listaAsistencia; let i = index"
+        >
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ alumno_recibido.Matricula }}</td>
+            <td>{{ alumno_recibido.Nombre }}</td>
+            <td>{{ alumno_recibido.Carrera }}</td>
+            <td>{{ alumno_recibido.Status }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div class="Contenedor">
+    <table *ngIf="Materias_Cargadas" class="table" style="margin-top: 30px">
+      <thead>
+        <h2>Materias del salón</h2>
+        <tr>
+          <th>Indice</th>
+          <th>NRC</th>
+          <th>Nombre</th>
+          <th>Horario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let materias_recibidas of Lista_Materias; let i = index"
+        >
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ materias_recibidas.NRC }}</td>
+            <td>{{ materias_recibidas.Nombre }}</td>
+            <td>{{ materias_recibidas.Horario }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+

@@ -1,0 +1,54 @@
+.boton {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.table{
+  height: fit-content; /* Establece una altura máxima para la tabla */
+  width: 95%;
+  position: relative;
+
+}
+
+.Contenedor {
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 15px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-height: 20rem;
+  position: relative; 
+  overflow-y: scroll;
+}
+
+.ejemplo {
+  margin: 12, 3, 6 , 9;
+  margin: 126, 39;
+  margin: 12369;
+  margin-top: 12;
+  margin-bottom: 6;
+  margin-left: 9;
+  margin-right: 3;
+}
+
+.opciones{
+  display: grid;
+  grid-template-columns: repeat(2,1fr) ;
+  width: 500px;
+  column-gap: 20px;
+}
+
+.ordenar{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr) ;
+  column-gap: 0px;
+
+}
+
+.ordenar div div button {
+  margin-top: 32px;
+  margin: 32px 10px 0px 10px;
+}

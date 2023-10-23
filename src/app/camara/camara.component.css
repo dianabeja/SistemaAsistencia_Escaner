@@ -1,0 +1,43 @@
+.scan-success-message {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00ff00;
+  border-radius: 10px;
+  animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.seccion{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  justify-items: center;
+  align-content: center;
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 2px;
+}
+
+.seccion h2 {
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.seccion zxing-scanner {
+  width: 400px;
+  justify-self: center;
+  border: 10px;
+  border-style: double;
+  border-color: rgb(255, 255, 255);
+  border-radius: 15px;
+}

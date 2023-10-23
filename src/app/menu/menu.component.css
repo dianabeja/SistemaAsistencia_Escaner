@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap");
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background:fixed;
+}
+
+.Navegador {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 30px;
+  max-height: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background-color: rgb(25, 81, 165);
+  margin: 0;
+  padding: 0;
+
+}
+
+.Logo_Pagina {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.Nombre_Pagina {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.Opciones_Rutas {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.Cuenta {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Logo_Pagina_img img {
+  width: 65%;
+  height: 65%;
+  padding: 0 20px;
+}
+
+.Nombre_Pagina_Text_Defualt {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.Rutas_Navegacion_Listado {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.Rutas_Navegacion_Listado a {
+  color: rgb(255, 255, 255);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.Boton button {
+  border-style: inherit;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Boton_Prender {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(71, 203, 181);
+  border-radius: 10px;
+  margin: 10px;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  padding-top: 10px;
+  margin-right: 25px;
+}
+
+.Boton_Apagar {
+  width: 200px;
+  height: 50px;
+  background-color: rgb(209, 58, 88);
+  border-radius: 10px;
+  margin: 10px;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  padding-top: 10px;
+}

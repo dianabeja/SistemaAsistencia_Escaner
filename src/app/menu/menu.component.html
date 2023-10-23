@@ -1,0 +1,31 @@
+<main class="Navegador">
+  <section class="Logo_Pagina">
+    <div class="Logo_Pagina_img">
+      <img src="../../assets/menu/Escudo_Pagina.png" alt="" />
+    </div>
+  </section>
+
+  <section class="Nombre_Pagina">
+    <div class="Nombre_Pagina_Text_Defualt">
+      FACULTAD DE NEGOCIOS Y TECNOLOGIAS 
+    </div>
+  </section>
+
+  <section class="Opciones_Rutas">
+    <div class="Rutas_Navegacion_Contenedor">
+      <nav class="Rutas_Navegacion_Listado">
+        <a href="Inicio">Inicio</a>
+        <a href="Configuracion">Configuracion</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="Cuenta">
+    <div class="Boton">
+      <button (click)="onSubmit()">
+        <div class="Boton_Prender" *ngIf="valor_Camara == true">Encendido</div>
+        <div class="Boton_Apagar" *ngIf="valor_Camara == false">Apagado</div>
+      </button>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,21 @@
+
+
+.table {
+  height: fit-content; /* Establece una altura máxima para la tabla */
+  width: 95%; /* Establece una altura fija para el contenedor */
+  position: absolute;
+}
+
+.Contenedor {
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 2px 0px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 92.5%;
+  position: relative; 
+  overflow-y: scroll;
+
+}

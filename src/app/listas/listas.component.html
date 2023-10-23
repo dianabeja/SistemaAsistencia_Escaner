@@ -1,0 +1,30 @@
+<div class="Contenedor">
+  <ng-container *ngIf="datosCargados">
+    <table class="table" style="margin-top: 20px;">
+      <thead>
+        <h2>Lista de Asistencia</h2>
+        <tr>
+          <th>ID</th>
+          <th>Matricula</th>
+          <th>Nombre</th>
+          <th>Estado</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let alumno_recibido of datosLeidos; let i = index">
+          <tr *ngIf="aparece_en_Lista(alumno_recibido)">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ alumno_recibido.Matricula }}</td>
+            <td>{{ alumno_recibido.Nombre }}</td>
+            <td>{{ alumno_recibido.Estado }}</td>
+            <td>{{ alumno_recibido.Hora }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </ng-container>
+</div>
+
+
+
