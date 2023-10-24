@@ -15,10 +15,9 @@
   max-height: 30px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  background-color: rgb(25, 81, 165);
+  /* background-color: rgb(25, 81, 165); */
   margin: 0;
   padding: 0;
-
 }
 
 .Logo_Pagina {
@@ -63,13 +62,13 @@
 }
 
 .Logo_Pagina_img img {
-  width: 65%;
-  height: 65%;
+  width: 50%;
+  height: 50%;
   padding: 0 20px;
 }
 
 .Nombre_Pagina_Text_Defualt {
-  color: #ffffff;
+  color: #000000;
   font-size: 25px;
   font-weight: 500;
 }
@@ -82,11 +81,29 @@
 }
 
 .Rutas_Navegacion_Listado a {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   text-align: center;
+}
+
+#inicio{
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  width: 6rem;
+  background-color: #0E47A1;
+  color:white;
+}
+
+#configuracion{
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  width: 10rem;
+  background-color: #0E47A1;
+  color:white;
 }
 
 .Boton button {
@@ -98,7 +115,7 @@
 .Boton_Prender {
   width: 200px;
   height: 50px;
-  background-color: rgb(71, 203, 181);
+  /* background-color: rgb(71, 203, 181); */
   border-radius: 10px;
   margin: 10px;
   font-weight: 900;
