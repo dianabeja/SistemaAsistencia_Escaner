@@ -14,20 +14,12 @@
   <section class="Opciones_Rutas">
     <div class="Rutas_Navegacion_Contenedor">
       <nav class="Rutas_Navegacion_Listado">
-        <a href="Inicio"><button id="inicio">Inicio</button></a>
-        <a href="Inicio"><button id="inicio">Lista</button></a>
-        <a href="Inicio"><button id="inicio">Materias</button></a>
+        
+        <a href="Inicio"><button id="materia">Mostrar materias</button></a>
+        <a href="Inicio"><button id="lista">Mostrar lista</button></a>
         <a href="Configuracion"><button id="configuracion">Configuración</button></a>
+        <a href="Inicio"><img src="../../assets/menu/home.png" alt="home" id="inicio"></a>
       </nav>
-    </div>
-  </section>
-
-  <section class="Cuenta">
-    <div class="Boton">
-      <button (click)="onSubmit()">
-        <div class="Boton_Prender" *ngIf="valor_Camara == true">Encendido</div>
-        <div class="Boton_Apagar" *ngIf="valor_Camara == false">Apagado</div>
-      </button>
     </div>
   </section>
 </main>

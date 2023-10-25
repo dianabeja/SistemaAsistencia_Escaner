@@ -1,3 +1,19 @@
+<section class="Cuenta">
+  <div class="Boton">
+    <button (click)="onSubmit()">
+      <div class="Boton_Prender" *ngIf="valor_Camara == true">
+        <button>
+          <img src="../../assets/menu/power.png" alt="power">
+        </button>
+      </div>
+      <div class="Boton_Apagar" *ngIf="valor_Camara == false">
+        <button>
+          <img src="../../assets/menu/power.png" alt="off">
+        </button>
+      </div>
+    </button>
+  </div>
+</section>
 <div class="Contenedor">
   <ng-container *ngIf="datosCargados">
     <table class="table" style="margin-top: 20px;">

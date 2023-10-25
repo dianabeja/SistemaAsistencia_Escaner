@@ -23,7 +23,7 @@ body {
   max-height: 120px;
 }
 
-#Informacion_Docente {
+#camara {
   position: relative;
   grid-column-start: 1;
   grid-column-end: 2;
