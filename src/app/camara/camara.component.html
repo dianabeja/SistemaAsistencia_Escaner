@@ -8,7 +8,7 @@
   (scanSuccess)="Controlador_Escaneado($event)"
   ></zxing-scanner>
 
-  <div *ngIf="Habilitar_Camara_Off_ON == false">
+  <div class="deshabilitado" *ngIf="Habilitar_Camara_Off_ON == false">
     Escaner Deshabilitado!
   </div>
   
@@ -16,7 +16,7 @@
     El código ha sido escaneado correctamente
   </div>
   
-  <div >
+  <div class="datos">
     <h2>Último dato escaneado:</h2>
     <p>Matrícula: {{ Ultima_Matricula_Escaneada || "No hay datos" }}</p>
     <p>Nombre: {{ Ultimo_Nombre_Escaneado || "No hay datos" }}</p>

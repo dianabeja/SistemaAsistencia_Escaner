@@ -21,7 +21,7 @@
   justify-content:center;
   justify-items: center;
   align-content: center;
-  background: #fff;
+  background: #0E47A1;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   border-radius: 10px;
   margin-left: 20px;
@@ -38,6 +38,13 @@
   justify-self: center;
   border: 10px;
   border-style: double;
-  border-color: rgb(255, 255, 255);
+  border-color: rgb(0, 0, 0);
   border-radius: 15px;
+}
+
+.datos {
+  color: white;
+}
+.deshabilitado{
+  color: rgb(173, 171, 171);
 }
