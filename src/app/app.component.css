@@ -19,8 +19,7 @@ body {
   position: relative;
   grid-column-start: 1;
   grid-column-end: 7;
-  /* background-color: rgba(30, 136, 229, 0.8); */
-  max-height: 120px;
+  height: 50px;
 }
 
 #camara {
