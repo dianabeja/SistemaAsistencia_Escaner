@@ -1,3 +1,14 @@
+<div class="Cuenta">
+    <button class="Cuenta" (click)="onSubmit()">
+      <div class="Boton_Prender" *ngIf="valor_Camara == true">        
+          <img src="../../assets/menu/power.png" alt="power">        
+      </div>
+      <div class="Boton_Apagar" *ngIf="valor_Camara == false">
+          <img src="../../assets/menu/power.png" alt="off">
+      </div>
+    </button>
+</div>
+
 <div class="Contenedor">
   <ng-container *ngIf="datosCargados">
     <table class="table" style="margin-top: 20px;">
@@ -26,5 +37,7 @@
   </ng-container>
 </div>
 
-
-
+<!-- Agregar funcionalidad de GUARDAR -->
+<div class="guardar">
+  <button id="guardar">Guardar</button>
+</div>

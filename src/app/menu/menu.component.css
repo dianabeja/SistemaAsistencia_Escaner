@@ -12,13 +12,11 @@
   min-width: 100%;
   min-height: 100%;
   max-width: 30px;
-  max-height: 30px;
+  height: 30px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  background-color: rgb(25, 81, 165);
   margin: 0;
   padding: 0;
-
 }
 
 .Logo_Pagina {
@@ -33,6 +31,8 @@
 }
 
 .Nombre_Pagina {
+  font-size: 2.5rem;
+  font-weight: 600;
   grid-column-start: 2;
   grid-column-end: 4;
   position: relative;
@@ -44,32 +44,24 @@
 
 .Opciones_Rutas {
   grid-column-start: 4;
-  grid-column-end: 6;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-}
-
-.Cuenta {
-  grid-column-start: 6;
   grid-column-end: 7;
   position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-content:flex-end;
+  justify-content: center;
 }
 
+
+
 .Logo_Pagina_img img {
-  width: 65%;
-  height: 65%;
+  width: 50%;
+  height: 50%;
   padding: 0 20px;
 }
 
 .Nombre_Pagina_Text_Defualt {
-  color: #ffffff;
+  color: #000000;
   font-size: 25px;
   font-weight: 500;
 }
@@ -82,40 +74,56 @@
 }
 
 .Rutas_Navegacion_Listado a {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   text-align: center;
+}
+
+#inicio{
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#materia{
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  border: none;
+  width: 9rem;
+  height: 3rem;
+  background-color: #0E47A1;
+  color:white;
+}
+#lista{
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  border: none;
+  width: 8rem;
+  height: 3rem;
+  background-color: #0E47A1;
+  color:white;
+}
+#configuracion{
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  border: none;
+  width: 8rem;
+  height: 3rem;
+  background-color: #0E47A1;
+  color:white;
 }
 
 .Boton button {
   border-style: inherit;
   font-size: 20px;
   font-weight: 500;
-}
-
-.Boton_Prender {
-  width: 200px;
-  height: 50px;
-  background-color: rgb(71, 203, 181);
-  border-radius: 10px;
-  margin: 10px;
-  font-weight: 900;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(255, 255, 255);
-  padding-top: 10px;
-  margin-right: 25px;
-}
-
-.Boton_Apagar {
-  width: 200px;
-  height: 50px;
-  background-color: rgb(209, 58, 88);
-  border-radius: 10px;
-  margin: 10px;
-  font-weight: 900;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(255, 255, 255);
-  padding-top: 10px;
 }
