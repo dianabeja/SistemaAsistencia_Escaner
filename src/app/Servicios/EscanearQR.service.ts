@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Datos_Locales } from './DatosLocales.service';
+import { ConexionService } from './Conexion.service';
 
 interface Estructura {
   Matricula: string;
