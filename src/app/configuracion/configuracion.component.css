@@ -1,16 +1,31 @@
-.boton {
+button {
   margin-bottom: 20px;
   margin-right: 20px;
+  border-radius: 0.5rem;
 }
 
-.table{
-  height: fit-content; /* Establece una altura máxima para la tabla */
+.opciones{
+  display: grid;
+  grid-template-columns: repeat(2,1fr) ;
+  width: 500px;
+  column-gap: 20px;
+  padding-left: 2rem;
+}
+
+.contraseña{
+  display: flex;
+  flex-direction: column;
+  align-items:start;
+  justify-content: left;
+}
+
+/* .table{
+  height: fit-content;
   width: 95%;
   position: relative;
+} */
 
-}
-
-.Contenedor {
+/* .Contenedor {
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
@@ -21,9 +36,9 @@
   max-height: 20rem;
   position: relative; 
   overflow-y: scroll;
-}
+} */
 
-.ejemplo {
+/* .ejemplo {
   margin: 12, 3, 6 , 9;
   margin: 126, 39;
   margin: 12369;
@@ -31,24 +46,16 @@
   margin-bottom: 6;
   margin-left: 9;
   margin-right: 3;
-}
+} */
 
-.opciones{
-  display: grid;
-  grid-template-columns: repeat(2,1fr) ;
-  width: 500px;
-  column-gap: 20px;
-}
-
-.ordenar{
+/* .ordenar{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2,1fr) ;
   column-gap: 0px;
-
 }
 
 .ordenar div div button {
   margin-top: 32px;
   margin: 32px 10px 0px 10px;
-}
+} */

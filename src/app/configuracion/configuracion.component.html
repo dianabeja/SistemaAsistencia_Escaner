@@ -1,5 +1,4 @@
-<section class="ordenar ">
-  <div style="padding-bottom: 20px; margin-left: 0;">
+<!-- <div style="padding-bottom: 20px; margin-left: 0;">
     <div class="d-grid gap-2 d-md-block">
       <button
         type="button"
@@ -19,10 +18,13 @@
         Guardar configuración
       </button>
     </div>
-  </div>
-  
+  </div> -->
+
     <section class="opciones">
-      <div class="mb-3">
+      <h2>Configuración</h2>
+      <br>
+      <form action="guardar-config">
+      
         <label class="form-label">Edificio asignado </label>
         <select
           class="form-select"
@@ -32,11 +34,10 @@
           <option selected>Selecciona un edificio</option>
           <option value="edificio1">Edificio 1</option>
           <option value="edificio2">Edificio 2</option>
-          <option value="edificio3">Edificio 3</option>
         </select>
-      </div>
+      
   
-      <div class="mb-3">
+      
         <label class="form-label">Salón asignado </label>
         <select
           class="form-select"
@@ -53,12 +54,28 @@
           <option value="Salón 7">Salón 7</option>
           <option value="Salón 8">Salón 8</option>
           <option value="Salón 9">Salón 9</option>
+          <option value="Salón 10">Salón 10</option>
+          <option value="Salón 12">Salón 12</option>
+          <option value="Salón 13">Salón 13</option>
+          <option value="Salón 14">Salón 14</option>
         </select>
-      </div>
+      
+      
+        <label for="password"  class="contraseña">Contraseña</label>
+        <input type="password">
+        <div>
+          <button id="guardar">Guardar</button>
+          <button id="cancelar">Cancelar</button>
+        </div>
+    </form>
     </section>
-</section>
 
-  <div class="Contenedor">
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+
+  <!-- <div class="Contenedor">
     <table *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px">
       <thead>
         <h2>Lista de Asistencia</h2>
@@ -109,5 +126,4 @@
         </ng-container>
       </tbody>
     </table>
-  </div>
-
+  </div> -->
