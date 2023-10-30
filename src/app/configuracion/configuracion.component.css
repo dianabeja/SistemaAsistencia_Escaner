@@ -2,6 +2,17 @@ button {
   margin-bottom: 20px;
   margin-right: 20px;
   border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 5.5rem;
+  border-style: none;
+  display:inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.seleccion{
+  line-height: 3rem;
 }
 
 .opciones{
@@ -12,11 +23,34 @@ button {
   padding-left: 2rem;
 }
 
+.form-select{
+  background-color: rgb(226, 225, 225);
+}
+
 .contraseña{
   display: flex;
   flex-direction: column;
   align-items:start;
   justify-content: left;
+}
+#passwd{
+  border-radius: 0.5rem;
+  width: 15rem;
+  height: 2.4rem;
+  background-color: rgb(226, 225, 225);
+  border-style: none;
+}
+.botones{
+  line-height: 7rem;
+}
+#guardar{
+  background-color: #23AE56;
+  color: white;
+}
+#cancelar{
+  background-color: white;
+  color: grey;
+  padding-left: 6rem;
 }
 
 /* .table{

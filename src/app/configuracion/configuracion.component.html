@@ -23,7 +23,7 @@
     <section class="opciones">
       <h2>Configuración</h2>
       <br>
-      <form action="guardar-config">
+      <form action="guardar-config" class="seleccion">
       
         <label class="form-label">Edificio asignado </label>
         <select
@@ -35,8 +35,6 @@
           <option value="edificio1">Edificio 1</option>
           <option value="edificio2">Edificio 2</option>
         </select>
-      
-  
       
         <label class="form-label">Salón asignado </label>
         <select
@@ -60,10 +58,10 @@
           <option value="Salón 14">Salón 14</option>
         </select>
       
-      
         <label for="password"  class="contraseña">Contraseña</label>
-        <input type="password">
-        <div>
+        <input type="password" minlength="10" maxlength="10" id="passwd">
+        
+        <div class="botones">
           <button id="guardar">Guardar</button>
           <button id="cancelar">Cancelar</button>
         </div>
