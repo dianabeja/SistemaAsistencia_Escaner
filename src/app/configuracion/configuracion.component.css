@@ -1,16 +1,65 @@
-.boton {
+button {
   margin-bottom: 20px;
   margin-right: 20px;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 5.5rem;
+  border-style: none;
+  display:inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.table{
-  height: fit-content; /* Establece una altura máxima para la tabla */
+.seleccion{
+  line-height: 3rem;
+}
+
+.opciones{
+  display: grid;
+  grid-template-columns: repeat(2,1fr) ;
+  width: 500px;
+  column-gap: 20px;
+  padding-left: 2rem;
+}
+
+.form-select{
+  background-color: rgb(226, 225, 225);
+}
+
+.contraseña{
+  display: flex;
+  flex-direction: column;
+  align-items:start;
+  justify-content: left;
+}
+#passwd{
+  border-radius: 0.5rem;
+  width: 15rem;
+  height: 2.4rem;
+  background-color: rgb(226, 225, 225);
+  border-style: none;
+}
+.botones{
+  line-height: 7rem;
+}
+#guardar{
+  background-color: #23AE56;
+  color: white;
+}
+#cancelar{
+  background-color: white;
+  color: grey;
+  padding-left: 6rem;
+}
+
+/* .table{
+  height: fit-content;
   width: 95%;
   position: relative;
+} */
 
-}
-
-.Contenedor {
+/* .Contenedor {
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
@@ -21,9 +70,9 @@
   max-height: 20rem;
   position: relative; 
   overflow-y: scroll;
-}
+} */
 
-.ejemplo {
+/* .ejemplo {
   margin: 12, 3, 6 , 9;
   margin: 126, 39;
   margin: 12369;
@@ -31,24 +80,16 @@
   margin-bottom: 6;
   margin-left: 9;
   margin-right: 3;
-}
+} */
 
-.opciones{
-  display: grid;
-  grid-template-columns: repeat(2,1fr) ;
-  width: 500px;
-  column-gap: 20px;
-}
-
-.ordenar{
+/* .ordenar{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2,1fr) ;
   column-gap: 0px;
-
 }
 
 .ordenar div div button {
   margin-top: 32px;
   margin: 32px 10px 0px 10px;
-}
+} */

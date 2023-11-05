@@ -1,129 +1,129 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap");
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background:fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
 }
 
-.Navegador {
-  position: relative;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: 30px;
-  height: 30px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  margin: 0;
-  padding: 0;
+.navbar {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.Logo_Pagina {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
+.left {
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .namepage{
+    font-size: 2.5rem;
+    font-weight: 520;
+    padding-left: 2rem;
+  }
+  img{
+    align-items: center;
+    justify-content: center;
+    width: 4.2rem;
+    height: 5rem;
+  }
+
+.checkBtn {
+    display: none;
 }
 
-.Nombre_Pagina {
-  font-size: 2.5rem;
-  font-weight: 600;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+#check {
+    display: none;
 }
 
-.Opciones_Rutas {
-  grid-column-start: 4;
-  grid-column-end: 7;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-content:flex-end;
-  justify-content: center;
+.checkBtn {
+    cursor: pointer;
+    font-size: 30px;
+    float: right;
+    color: #000000;
+    line-height: 80px;
 }
 
-
-
-.Logo_Pagina_img img {
-  width: 50%;
-  height: 50%;
-  padding: 0 20px;
+.right ul {
+    display: flex;
+    list-style: none;
 }
 
-.Nombre_Pagina_Text_Defualt {
-  color: #000000;
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.Rutas_Navegacion_Listado {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-around;
-}
-
-.Rutas_Navegacion_Listado a {
-  color: rgb(0, 0, 0);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
-  text-decoration: none;
-  text-align: center;
+.right ul li a {
+    padding: 1rem;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 #inicio{
-  width: 2.5rem;
-  height: 2.5rem;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    width: 3rem;
+    height: 3rem;
+    border: none;
+  }
+  
+  #materia{
+    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    border: none;
+    width: 9rem;
+    height: 3rem;
+    background-color: #0E47A1;
+    color:white;
+  }
+  #lista{
+    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    border: none;
+    width: 8rem;
+    height: 3rem;
+    background-color: #0E47A1;
+    color:white;
+  }
+  #config{
+    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    border: none;
+    width: 8rem;
+    height: 3rem;
+    background-color: #0E47A1;
+    color:white;
+  }
 
-#materia{
-  font-size: 16px;
-  padding: 0.5rem;
-  border-radius: 0.7rem;
-  border: none;
-  width: 9rem;
-  height: 3rem;
-  background-color: #0E47A1;
-  color:white;
-}
-#lista{
-  font-size: 16px;
-  padding: 0.5rem;
-  border-radius: 0.7rem;
-  border: none;
-  width: 8rem;
-  height: 3rem;
-  background-color: #0E47A1;
-  color:white;
-}
-#configuracion{
-  font-size: 16px;
-  padding: 0.5rem;
-  border-radius: 0.7rem;
-  border: none;
-  width: 8rem;
-  height: 3rem;
-  background-color: #0E47A1;
-  color:white;
-}
+@media screen and (max-width:805px) {
+    .list {
+        width: 100%;
+        height: 100vh;
+        background-color: #0E47A1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 5rem;
+        left: 100%;
+        transition: all 1s;
+    }
 
-.Boton button {
-  border-style: inherit;
-  font-size: 20px;
-  font-weight: 500;
+    #check {
+        display: none;
+    }
+
+    .checkBtn {
+        display: block;
+    }
+
+    #check:checked~ul {
+        left: 0%;
+    }
+
 }
