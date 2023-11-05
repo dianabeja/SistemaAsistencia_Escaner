@@ -18,7 +18,7 @@
         Guardar configuración
       </button>
     </div>
-  </div> -->
+  </div> --><!-- cambios locales por falta de internet -->
 
     <section class="opciones">
       <h2>Configuración</h2>
@@ -59,10 +59,10 @@
         </select>
       
         <label for="password"  class="contraseña">Contraseña</label>
-        <input type="password" minlength="10" maxlength="10" id="passwd">
+        <input type="password" required minlength="10" maxlength="10" id="passwd" [(ngModel)]="contrasena" (change)="verificarContrasena()">
         
         <div class="botones">
-          <button id="guardar">Guardar</button>
+          <button id="guardar" type="submit" (click)="onSubmit()">Guardar</button>
           <button id="cancelar">Cancelar</button>
         </div>
     </form>

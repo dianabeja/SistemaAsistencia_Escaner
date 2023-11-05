@@ -18,6 +18,7 @@ export class ConfiguracionComponent implements OnInit {
   salonSeleccionado: string = 'Selecciona un salón';
   Lista_Asistencia: boolean = false;
   Materias_Cargadas: boolean = false;
+  contrasena: string='';
 
   datosLeidos: Estructura[] = [];
   nrcMateria: string = '';
@@ -51,6 +52,14 @@ export class ConfiguracionComponent implements OnInit {
     this.datos_locales.guardar_DatoLocal('edificioSeleccionado',this.edificioSeleccionado);
     this.datos_locales.guardar_DatoLocal('salonSeleccionado',this.salonSeleccionado);
     window.location.reload();
+  }
+
+  verificarContrasena(){
+    const contrasenaCorrecta = '*SIAE2023*';
+    if (this.contrasena !== contrasenaCorrecta){
+      alert("La contraseña es incorrecta");
+      this.contrasena='';
+    }
   }
 
 }
