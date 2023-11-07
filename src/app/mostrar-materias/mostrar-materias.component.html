@@ -1,0 +1,26 @@
+<p>mostrar-materias works!</p>
+<div class="Contenedor">
+    <table *ngIf="Materias_Cargadas" class="table" style="margin-top: 30px">
+      <thead>
+        <h2>Materias del salón</h2>
+        <tr>
+          <th>Indice</th>
+          <th>NRC</th>
+          <th>Nombre</th>
+          <th>Horario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let materias_recibidas of Lista_Materias; let i = index"
+        >
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ materias_recibidas.NRC }}</td>
+            <td>{{ materias_recibidas.Nombre }}</td>
+            <td>{{ materias_recibidas.Horario }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>

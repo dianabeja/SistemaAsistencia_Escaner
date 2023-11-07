@@ -1,5 +1,8 @@
 <h1>prueba Mostrar_lista</h1>
 <div class="Contenedor">
+  <ng-container
+          *ngFor="let alumno_recibido of listaAsistencia; let i = index"
+        >
     <table *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px">
       <thead>
         <h2>Lista de Asistencia</h2>
@@ -25,29 +28,6 @@
         </ng-container>
       </tbody>
     </table>
+  </ng-container>
   </div>
-  <div class="Contenedor">
-    <table *ngIf="Materias_Cargadas" class="table" style="margin-top: 30px">
-      <thead>
-        <h2>Materias del salón</h2>
-        <tr>
-          <th>Indice</th>
-          <th>NRC</th>
-          <th>Nombre</th>
-          <th>Horario</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container
-          *ngFor="let materias_recibidas of Lista_Materias; let i = index"
-        >
-          <tr>
-            <td>{{ i + 1 }}</td>
-            <td>{{ materias_recibidas.NRC }}</td>
-            <td>{{ materias_recibidas.Nombre }}</td>
-            <td>{{ materias_recibidas.Horario }}</td>
-          </tr>
-        </ng-container>
-      </tbody>
-    </table>
-  </div>
+  

@@ -23,6 +23,7 @@ import { FirestoreService } from './Servicios/FirestoreListas.service';
 import { ConexionService } from './Servicios/Conexion.service';
 import { Datos_Locales } from './Servicios/DatosLocales.service';
 import { MostrarListasComponent } from './mostrar-listas/mostrar-listas.component';
+import { MostrarMateriasComponent } from './mostrar-materias/mostrar-materias.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MostrarListasComponent } from './mostrar-listas/mostrar-listas.componen
     ListasComponent,
     ConfiguracionComponent,
     MostrarListasComponent,
+    MostrarMateriasComponent,
   ],
   imports: [
     BrowserModule,
