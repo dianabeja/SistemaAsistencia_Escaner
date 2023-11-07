@@ -22,6 +22,7 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
 import { FirestoreService } from './Servicios/FirestoreListas.service';
 import { ConexionService } from './Servicios/Conexion.service';
 import { Datos_Locales } from './Servicios/DatosLocales.service';
+import { MostrarListasComponent } from './mostrar-listas/mostrar-listas.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { Datos_Locales } from './Servicios/DatosLocales.service';
     MenuComponent,
     ListasComponent,
     ConfiguracionComponent,
+    MostrarListasComponent,
   ],
   imports: [
     BrowserModule,
