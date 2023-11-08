@@ -1,8 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
 import { FirestoreService } from '../Servicios/FirestoreListas.service';
 import { Datos_Locales } from '../Servicios/DatosLocales.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ConexionService } from '../Servicios/Conexion.service';
+import { interval, Subscription } from 'rxjs';
+
 
 export interface Estructura {
   Matricula: string;
@@ -16,7 +18,11 @@ export interface Estructura {
   templateUrl: './listas.component.html',
   styleUrls: ['./listas.component.css'],
 })
-export class ListasComponent implements OnInit {
+export class ListasComponent implements OnInit, OnDestroy {
+  //Variables para detectar el cambio de hora
+  hora_Actual: number = new Date().getHours();
+  subscription: Subscription | any;
+
   datosLeidos: Estructura[] = [];
   mostrarLista: Estructura[] = [];
   listaAsistencia: any[] = [];
@@ -32,19 +38,16 @@ export class ListasComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.datos_locales
-      .Lista_Datos_QR_Observable()
-      .subscribe((nuevoValor: any) => {
-        this.datosLeidos = JSON.parse(nuevoValor) || [];
-        if (this.conexionService.getOnlineStatus().getValue()) {
-          this.conexionService.enviarDatos();
-          this.datos_locales.eliminarDatosAlFinalizarDia();
-        }
-      });
+   this.datos_locales.Lista_Datos_QR_Observable()
+      .subscribe((nuevovalor: any) => {
+        this.LlenarAsistencias(nuevovalor)
+        //Si no se reciben valores, la variable se inicia como array vacío, en caso contrario, convierte los valores recibidos en JSON y los almacena
+        this.datosLeidos = JSON.parse(nuevovalor) || []
+
+      })
 
     const Obtener = this.datos_locales.obtener_DatoLocal('almacenarDatosQR');
     this.datosLeidos = Obtener ? JSON.parse(Obtener) : [];
-
     this.cargarDatos().then(() => {
       this.datosCargados = true;
     });
@@ -59,7 +62,7 @@ export class ListasComponent implements OnInit {
     );
   }
 
-  aparece_en_Lista(alumno_recibido: Estructura): boolean {
+  aparece_en_Lista(alumno_recibido: [] | any): boolean {
     const buscar = this.listaAsistencia.find(
       (buscar_coincidencia) =>
         buscar_coincidencia.Matricula === alumno_recibido.Matricula
@@ -80,5 +83,66 @@ export class ListasComponent implements OnInit {
     }
   }
 
-  
+  verificarCambioDeHora() {
+    this.subscription = interval(60000).subscribe(() => {
+      const nuevaHora = new Date().getHours();
+
+      if (this.hora_Actual != nuevaHora) {
+        this.hora_Actual = nuevaHora;
+
+        this.LlenarInasistencias();
+      }
+    });
+  }
+
+LlenarAsistencias(alumnosStr: string) {
+  // Try to parse the string into a JavaScript array
+  let alumnos;
+  try {
+      alumnos = JSON.parse(alumnosStr);
+      console.log('busca alumnos asistencia',alumnos);
+
+  } catch (error) {
+      console.error('Error parsing alumnos string:', error);
+      return;  // Exit if there's an error in parsing
+  }
+  // Now, you should be able to filter the parsed array
+  if (Array.isArray(alumnos)) {
+      const array = alumnos.filter((alumno: any) => 
+          this.aparece_en_Lista(alumno)
+      );
+      console.log("array", array)
+
+      array.forEach((alumnos: any) => console.log(alumnos));
+      array.map((alumno: any) => this.conexionService.Asistencia(this.carrera, this.nrcMateria, alumno.Materia, '08-11-23'));
+  } else {
+      console.error('alumnos is not an array even after parsing:', alumnos);
+  }
+}
+
+
+  LlenarInasistencias() {
+    this.datosCargados = false;
+
+    if (this.hora_Actual % 2 != 0) {
+      this.cargarDatos().then(() => {
+        this.datosCargados = true;
+      });
+      this.carrera;
+      this.nrcMateria;
+
+      this.listaAsistencia.map((alumno) =>
+        this.conexionService.Asistencia(
+          this.carrera,
+          this.nrcMateria,
+          alumno.Matricula,
+          '08-11-23'
+        )
+      );
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

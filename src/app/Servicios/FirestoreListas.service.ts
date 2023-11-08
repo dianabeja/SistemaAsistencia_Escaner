@@ -53,9 +53,7 @@ export class FirestoreService {
   }
 
   async getNrcByHorario() {
-   let url = this.Edificio + '/' + this.Salon + '/lunes/' + this.Hora;
-   console.log('url', url);
- 
+   let url = this.Edificio + '/' + this.Salon + '/lunes/' + this.Hora; 
    try {
      const nrc_obtenido = await this.firestore.doc(url).get().toPromise();
  
