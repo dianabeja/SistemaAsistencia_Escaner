@@ -1,11 +1,13 @@
 <section class="seccion">
-
-  <zxing-scanner *ngIf="Habilitar_Camara_Off_ON"
+  <div class="camara-container">
+    <zxing-scanner class="camara" *ngIf="Habilitar_Camara_Off_ON"
   [enable]="Escanear_Codigos_Off_ON"
   [device]="Dispotivo_Usar"
   (camerasFound)="Controlador_Camaras_Encontradas($event)"
   (scanSuccess)="Controlador_Escaneado($event)"
   ></zxing-scanner>
+  </div>
+  
 
   <div class="deshabilitado" *ngIf="Habilitar_Camara_Off_ON == false">
     Escaner Deshabilitado!

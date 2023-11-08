@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Datos_Locales } from './DatosLocales.service';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -38,12 +39,11 @@ export class FirestoreService {
   }
 
   async getCarrera() {
-
     const carrera = await this.firestore.collection('/' + this.Edificio + '/' + this.Salon + '/carrera').get().toPromise();
-  
     if (carrera) {
       const data = carrera.docs.map((doc) => doc.data());
       const data_Carrera: string | any = data[0];
+      console.log(data_Carrera.Carrera)
       return data_Carrera.Carrera;
     } else {
       console.log('No se puede obtener la información de Firestore');
@@ -53,25 +53,34 @@ export class FirestoreService {
   }
 
   async getNrcByHorario() {
-    console.log(this.Edificio, this.Salon, this.Dia, this.Hora)
-    let url = '/' + this.Edificio + '/' + this.Salon + '/horarios/' + this.Dia + '/' + this.Hora + '/';
-    const nrc_obtenido = await this.firestore.collection(url).get().toPromise();
-    if (nrc_obtenido) {
-      const datos_recibidos = nrc_obtenido.docs.map((datos) => datos.data());
-      const nrc_materia: string | any = datos_recibidos[0];
-      console.log( nrc_materia.NRC)
-      return nrc_materia.NRC;
-    } else {
-      console.log('No se pudo obtener la información de Firestore.');
-      return [];
-    }
-
+   let url = this.Edificio + '/' + this.Salon + '/lunes/' + this.Hora;
+   console.log('url', url);
+ 
+   try {
+     const nrc_obtenido = await this.firestore.doc(url).get().toPromise();
+ 
+     if (nrc_obtenido && nrc_obtenido.exists) {
+       const nrc = nrc_obtenido.get('NRC'); // Obtenemos el valor del campo 'NRC'
+       if (nrc !== undefined) {
+         console.log('NRC:', nrc);
+         return nrc;
+       } else {
+         console.log('El documento no contiene un campo NRC válido.');
+         return null;
+       }
+     } else {
+       console.log('El documento no existe en Firestore.');
+       return null;
+     }
+   } catch (error) {
+     console.error('Error al obtener datos de Firestore:', error);
+     return null;
+   }
   }
 
   async getListaAsistencia(nrc: string, carrera: string) {
 
-    let url = '/' + carrera + '/Materias/' + nrc;
-    console.log(url)
+    let url = '/'+carrera+ '/Materias/' + nrc;
     const lista_encontrada = await this.firestore.collection(url).get().toPromise();
 
     if (lista_encontrada) {

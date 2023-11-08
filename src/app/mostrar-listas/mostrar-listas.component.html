@@ -1,6 +1,8 @@
-    <table *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px">
-      <thead class="encabezado">
-        <h2 class="titulo">Lista de Asistencia</h2>
+<h2 class="titulo">Lista de Asistencia</h2>
+   <div class="Contenedor">
+    <table  *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px">
+      <thead class=" encabezado">
+        <button  *ngIf="!listaAsistencia  || listaAsistencia.length == 0" (click)="GuardarDatosEnFirestore()">Cargar archivo</button>
         <tr>
           <!-- <th>Indice</th> -->
           <th>Alumno</th>
@@ -9,6 +11,7 @@
           <th>Status</th>
         </tr>
       </thead>
+      
       <tbody>
         <ng-container
           *ngFor="let alumno_recibido of listaAsistencia; let i = index">
@@ -25,3 +28,4 @@
   
   
   
+   </div> 
