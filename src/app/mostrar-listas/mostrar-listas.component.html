@@ -1,8 +1,8 @@
     <table *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px">
-      <thead>
-        <h2>Lista de Asistencia</h2>
+      <thead class="encabezado">
+        <h2 class="titulo">Lista de Asistencia</h2>
         <tr>
-          <th>Indice</th>
+          <!-- <th>Indice</th> -->
           <th>Alumno</th>
           <th>Matricula</th>
           <th>Carrera</th>
@@ -11,10 +11,9 @@
       </thead>
       <tbody>
         <ng-container
-          *ngFor="let alumno_recibido of listaAsistencia; let i = index"
-        >
+          *ngFor="let alumno_recibido of listaAsistencia; let i = index">
           <tr>
-            <td>{{ i + 1 }}</td>
+            <!-- <td>{{ i + 1 }}</td> -->
             <td>{{ alumno_recibido.Matricula }}</td>
             <td>{{ alumno_recibido.Nombre }}</td>
             <td>{{ alumno_recibido.Carrera }}</td>
