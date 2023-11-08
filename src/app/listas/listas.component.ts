@@ -79,4 +79,6 @@ export class ListasComponent implements OnInit {
       this.datos_locales.Habilitar_Desabilitar_Camara_Observable().next(false); 
     }
   }
+
+  
 }
