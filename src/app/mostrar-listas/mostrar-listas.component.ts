@@ -17,7 +17,7 @@ interface Estructura {
 export class MostrarListasComponent implements OnInit {
   edificioSeleccionado: string = 'Selecciona un edificio';
   salonSeleccionado: string = 'Selecciona un salón';
-  Lista_Asistencia: boolean = false;
+  Lista_Asistencia: boolean = true;
   Materias_Cargadas: boolean = false;
   contrasena: string='';
 

@@ -17,8 +17,7 @@ export class MostrarMateriasComponent implements OnInit {
 
   edificioSeleccionado: string = 'Selecciona un edificio';
   salonSeleccionado: string = 'Selecciona un salón';
-  Lista_Asistencia: boolean = false;
-  Materias_Cargadas: boolean = false;
+  Materias_Cargadas: boolean = true;
   contrasena: string='';
 
   datosLeidos: Estructura[] = [];
