@@ -114,7 +114,7 @@ LlenarAsistencias(alumnosStr: string) {
       console.log("array", array)
 
       array.forEach((alumnos: any) => console.log(alumnos));
-      array.map((alumno: any) => this.conexionService.Asistencia(this.carrera, this.nrcMateria, alumno.Materia, '08-11-23'));
+      array.map((alumno: any) => this.conexionService.Asistencia(this.carrera, this.nrcMateria, alumno.Materia, '07-11-23'));
   } else {
       console.error('alumnos is not an array even after parsing:', alumnos);
   }

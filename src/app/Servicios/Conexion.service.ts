@@ -92,7 +92,7 @@ export class ConexionService {
           '/Asistencia'
       )
       .doc(fecha)
-      .set({ hora: fecha , Matricula:matricula_alumno, nombre:matricula_alumno})
+      .set({ hora: fecha})
       .then(() => console.log('dato'));
 
     const eliminarInasistencia = this.firestore
