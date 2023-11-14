@@ -52,7 +52,6 @@ export class ConexionService {
     );
     const datosAEnviar = this.verificarDatos(listaAsistencia);
     const inasistencia = this.listaInasistencia(listaAsistencia);
-    console.log(inasistencia);
 
     datosAEnviar.forEach(async (dato: any) => {
       const coleccion = this.firestore
@@ -78,10 +77,12 @@ export class ConexionService {
     carrera: string,
     nrc_materia: string,
     matricula_alumno: string,
-    fecha: string
+    fecha: string,
+    hora: string
   ) {
-    console.log('matricula encontrada en asistencia'+matricula_alumno);
-    const coleccion = this.firestore
+    console.log(carrera, nrc_materia, matricula_alumno, fecha, 'datos');
+
+    this.firestore
       .collection(
         '/' +
           carrera +
@@ -92,10 +93,10 @@ export class ConexionService {
           '/Asistencia'
       )
       .doc(fecha)
-      .set({ hora: fecha})
+      .set({ hora: hora })
       .then(() => console.log('dato'));
 
-    const eliminarInasistencia = this.firestore
+    this.firestore
       .collection(
         '/' +
           carrera +
@@ -126,7 +127,7 @@ export class ConexionService {
           '/Inasistencia'
       )
       .doc(fecha)
-      .set({ date: fecha })
+      .set({ fecha: fecha })
       .then(() => console.log('dato'));
   }
 
@@ -158,5 +159,5 @@ export class ConexionService {
 
   getOnlineStatus(): BehaviorSubject<boolean> {
     return this.onlineOffline;
-  }
+  }
 }
