@@ -74,11 +74,11 @@ export class ListasComponent implements OnInit, OnDestroy {
   valor_Camara: boolean = true;
 
   onSubmit() {
-    if (this.valor_Camara == false) {
-      this.valor_Camara = true;
+    if (this.valor_Camara == true) {
+      this.valor_Camara = false;
       this.datos_locales.Habilitar_Desabilitar_Camara_Observable().next(true);
     } else {
-      this.valor_Camara = false;
+      this.valor_Camara = true;
       this.datos_locales.Habilitar_Desabilitar_Camara_Observable().next(false);
     }
   }
